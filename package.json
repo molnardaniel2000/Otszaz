@@ -1,5 +1,5 @@
 {
-    "name": "Otszaz",
+    "name": "otszaz",
     "version": "1.0.0",
     "description": "Jedlik project template for using TypeScript, Jest and Node.js in VS Code.",
     "engines": {
