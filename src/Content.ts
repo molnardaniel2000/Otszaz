@@ -69,6 +69,26 @@ export default class Content {
             res.write(`${megoldas.darabEsAru(sorszam)[i]} ${megoldas.darabEsAru(sorszam)[i + 1]}\n`);
         }
         megoldas.allomanybaIr("osszeg.txt");
+
+        res.write("\nGithub repository link: <a href='https://github.com/molnardaniel2000/Otszaz.git'>https://github.com/molnardaniel2000/Otszaz.git</a>\n");
+
+        res.write("A penztar.txt kiírása\n");
+
+        fs.readFileSync("penztar.txt")
+            .toString()
+            .split("\r\n")
+            .forEach(l => {
+                res.write(l + "\n");
+            });
+
+        res.write("Az osszeg.txt kiírása\n");
+
+        fs.readFileSync("osszeg.txt")
+            .toString()
+            .split("\r\n")
+            .forEach(l => {
+                res.write(l + "\n");
+            });
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form></body></html>");
