@@ -2,7 +2,7 @@
 import http from "http";
 import url from "url";
 import Megoldas from "./Megoldas";
-import { isNull, isString } from "util";
+import { isNull, isString, isUndefined } from "util";
 
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
@@ -38,7 +38,7 @@ export default class Content {
         }
         res.write(`4.feladat\nAdja meg egy vásárlás sorszámát! <input type='text' name='sorszam' value=${sorszam} style='width: 3em' onChange='this.form.submit();'>\n`);
         let arucikk: string = u.arucikk as string;
-        if (isNull(arucikk) || arucikk === "") {
+        if (isUndefined(arucikk) || isNull(arucikk) || arucikk === "") {
             arucikk = "kefe";
         }
         res.write(`Adja meg egy árucikk nevét! <input type='text' name='arucikk' value=${arucikk} style='width: 10em' onChange='this.form.submit();'>\n`);
@@ -70,9 +70,9 @@ export default class Content {
         }
         megoldas.allomanybaIr("osszeg.txt");
 
-        res.write("\nGithub repository link: <a href='https://github.com/molnardaniel2000/Otszaz.git'>https://github.com/molnardaniel2000/Otszaz.git</a>\n");
+        res.write("\nGithub repository link: <a href='https://github.com/molnardaniel2000/Otszaz.git'>https://github.com/molnardaniel2000/Otszaz.git</a>\n\n");
 
-        res.write("A penztar.txt kiírása\n");
+        res.write("A penztar.txt kiírása\n\n");
 
         fs.readFileSync("penztar.txt")
             .toString()
@@ -81,7 +81,7 @@ export default class Content {
                 res.write(l + "\n");
             });
 
-        res.write("Az osszeg.txt kiírása\n");
+        res.write("Az osszeg.txt kiírása\n\n");
 
         fs.readFileSync("osszeg.txt")
             .toString()
