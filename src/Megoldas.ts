@@ -86,7 +86,7 @@ export default class Megoldas {
             for (const arucikk of this._fizetesek[i].kulonbozoArucikkek) {
                 ar += this.fizetendoOsszeg(this._fizetesek[i].hanyszorArucikk(arucikk));
             }
-            szoveg += `${i + 1}: ${ar}\n`;
+            szoveg += `${i + 1}: ${ar}\r\n`;
         }
         fs.writeFileSync(allomanyNeve, szoveg);
     }
