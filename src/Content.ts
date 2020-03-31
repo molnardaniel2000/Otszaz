@@ -25,7 +25,7 @@ export default class Content {
 
         // Kezd a kódolást innen -->
         const megoldas: Megoldas = new Megoldas("penztar.txt");
-
+        //2. feladat
         res.write(`2. feladat\nA fizetések száma: ${megoldas.fizetesekSzama}\n\n`);
 
         res.write(`3. feladat\nAz első vásárló ${megoldas.elsoVasarloAruinakSzama} darab árucikket vásárolt.\n\n`);
