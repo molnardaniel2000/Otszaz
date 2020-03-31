@@ -33,7 +33,7 @@ describe("Megoldás osztály unit tesztjei", () => {
     });
     const megoldas2: Megoldas = new Megoldas("penztar2.txt");
     it("Állományba írás", async () => {
-        fs.writeFileSync("osszeg2.txt", "1: 1850\n2: 1500\n3: 950\n");
+        fs.writeFileSync("osszeg2.txt", "1: 1850\r\n2: 1500\r\n3: 950\r\n");
         megoldas2.allomanybaIr("osszeg3.txt");
         expect(fs.readFileSync("osszeg3.txt").toString()).toBe(fs.readFileSync("osszeg2.txt").toString());
     });
