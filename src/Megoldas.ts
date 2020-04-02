@@ -8,7 +8,7 @@ export default class Megoldas {
         return this._fizetesek.length;
     }
     public get elsoVasarloAruinakSzama(): number {
-        return this._fizetesek[0].arukSzama;
+        return this._fizetesek[0].arukSzama();
     }
 
     constructor(forras: string) {
