@@ -1,3 +1,5 @@
+import { stringify } from "querystring";
+
 export default class Fizetes {
     private _aurk: string[] = [];
 
@@ -15,7 +17,11 @@ export default class Fizetes {
                 arucikkek.push(arucikk);
             }
         }
-        return arucikkek;
+        if (arucikkek) {
+            return arucikkek;
+        } else {
+            return [];
+        }
     }
     constructor(forras: string[]) {
         this._aurk = forras;

@@ -7,7 +7,7 @@ export default class Megoldas {
     public get fizetesekSzama(): number {
         return this._fizetesek.length;
     }
-    public get elsoVasarloAruinakSzama(): number {
+    public get elsoVasarloAruinakSzama(): number { 
         return this._fizetesek[0].arukSzama;
     }
 
