@@ -7,7 +7,7 @@ export default class Megoldas {
     public get fizetesekSzama(): number {
         return this._fizetesek.length;
     }
-    public get elsoVasarloAruinakSzama(): number { 
+    public get elsoVasarloAruinakSzama(): number {
         return this._fizetesek[0].arukSzama;
     }
 
@@ -15,7 +15,7 @@ export default class Megoldas {
         let seged: string[] = [];
         fs.readFileSync(forras)
             .toString()
-            .split("\r\n")
+            .split("\n")
             .forEach(l => {
                 const aktsor = l.trim();
                 if (aktsor === "F") {
