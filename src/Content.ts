@@ -46,7 +46,7 @@ export default class Content {
         if (isNaN(darab) || darab < 0) {
             darab = 2;
         }
-        res.write(`Adja meg egy árucikk nevét! <input type='text' name='darab' value=${darab} style='width: 3em' onChange='this.form.submit();'>\n\n`);
+        res.write(`Adja meg a vásárolt darabszámot! <input type='text' name='darab' value=${darab} style='width: 3em' onChange='this.form.submit();'>\n\n`);
 
         if (isString(megoldas.eloszorVasaroltak(arucikk))) {
             res.write(`5. feladat\n${megoldas.eloszorVasaroltak(arucikk)}\n`);
@@ -72,23 +72,24 @@ export default class Content {
 
         res.write("\nGithub repository link: <a href='https://github.com/molnardaniel2000/Otszaz.git'>https://github.com/molnardaniel2000/Otszaz.git</a>\n\n");
 
-        res.write("A penztar.txt kiírása\n\n");
-
-        fs.readFileSync("penztar.txt")
-            .toString()
-            .split("\r\n")
-            .forEach(l => {
-                res.write(l + "\n");
-            });
-
         res.write("Az osszeg.txt kiírása\n\n");
 
         fs.readFileSync("osszeg.txt")
             .toString()
-            .split("\r\n")
+            .split("\n")
             .forEach(l => {
-                res.write(l + "\n");
+                res.write(l.trim() + "\n");
             });
+
+        res.write("A penztar.txt kiírása\n\n");
+
+        fs.readFileSync("penztar.txt")
+            .toString()
+            .split("\n")
+            .forEach(l => {
+                res.write(l.trim() + "\n");
+            });
+
         // <---- Fejezd be a kódolást
 
         res.write("</pre></form></body></html>");
