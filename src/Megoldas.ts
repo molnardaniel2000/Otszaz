@@ -75,7 +75,7 @@ export default class Megoldas {
         const darabEsAru: (number | string)[] = [];
         for (const arucikk of this._fizetesek[sorszam - 1].kulonbozoArucikkek) {
             darabEsAru.push(this._fizetesek[sorszam - 1].hanyszorArucikk(arucikk));
-            darabEsAru.push(arucikk);
+            darabEsAru.push(arucikk.trim());
         }
         return darabEsAru;
     }

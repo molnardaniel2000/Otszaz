@@ -63,7 +63,7 @@ export default class Content {
         } else {
             res.write(`${megoldas.hanyszorVasarolatak(arucikk)} vásárlás során vettek belőle.\n\n`);
         }
-        res.write(`${darab} darab vételekor fizetendő: ${megoldas.fizetendoOsszeg(darab)}\n\n`);
+        res.write(`6.feladat\n${darab} darab vételekor fizetendő: ${megoldas.fizetendoOsszeg(darab)}\n\n`);
         res.write("7. feladat\n");
         for (let i = 0; i < megoldas.darabEsAru(sorszam).length; i += 2) {
             res.write(`${megoldas.darabEsAru(sorszam)[i]} ${megoldas.darabEsAru(sorszam)[i + 1]}\n`);

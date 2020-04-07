@@ -29,7 +29,7 @@ describe("Megoldás osztály unit tesztjei", () => {
         expect(megoldas.fizetendoOsszeg(4)).toBe(1750);
     });
     it("Hány darab volt egy árúból egy bizonyos vásárlás sorány", async () => {
-        expect(megoldas.darabEsAru(2).toString()).toBe([2, "colostok", 2, "HB ceruza", 1, "toll", 1, "szatyor", 1, "csavarkulcs", 1, "doboz"].toString());
+        expect(megoldas.darabEsAru(2)).toStrictEqual([2, "colostok", 2, "HB ceruza", 1, "toll", 1, "szatyor", 1, "csavarkulcs", 1, "doboz"]);
     });
     const megoldas2: Megoldas = new Megoldas("penztar2.txt");
     it("Állományba írás", async () => {
